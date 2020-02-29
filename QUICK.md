@@ -15,6 +15,7 @@ simpleui 快速上手指南
   + [图标说明](#图标说明)
   + [关闭登录页粒子动画](#关闭登录页粒子动画)
 # 进阶指南
+  + [默认主题](#默认主题)
   + [自定义主题](#自定义主题)
   + [修改首页图标](#修改默认图标)
   + [修改默认首页](#修改默认首页)
@@ -38,7 +39,8 @@ simpleui 快速上手指南
   + [底部添加自定义代码](#底部添加自定义代码)
   + [自定义按钮](#自定义按钮)
   + [离线模式](#离线模式)
-
+  + [关闭Loading遮罩层](#关闭Loading遮罩层)
+  + [admindoc](#admindoc)
 # 常见问题
   + [settings.py](#settingspy-找不到)
   + [python版本问题](#python版本问题)
@@ -117,6 +119,200 @@ simpleui中显示的图标 可以参考[fontawesome](https://fontawesome.com/ico
 SIMPLEUI_LOGIN_PARTICLES = False
 ```
 粒子动画默认开启
+
+## 默认主题
+
+默认主题在settings.py中进行配置
+
+```python
+# 指定simpleui默认的主题,指定一个文件名，相对路径就从simpleui的theme目录读取
+SIMPLEUI_DEFAULT_THEME = 'admin.lte.css'
+```
+
+### 主题列表：
+
+> 取对应的file即可设置成默认主题
+
+```javascript
+var SimpleuiThemes = [
+    {
+        text: "Default",
+        menu: 'rgb(48, 65, 86)',
+        logo: 'rgb(48, 65, 86)',
+        top: '#FFF'
+    },
+    {
+        text: "Simpleui-x",
+        menu: '#2c2e39',
+        logo: '#2c2e39',
+        top: '#FFF',
+        file: "simpleui.css"
+    },
+    {
+        text: "Element-UI",
+        file: "element.css",
+        top: '#447eff',
+        menu: '#FFf',
+        logo: '#FFF'
+    },
+    {
+        text: "layui",
+        file: "layui.css",
+        menu: '#393D49',
+        logo: '#23262E',
+        top: '#23262E'
+    }, {
+        text: "Ant Design Pro",
+        file: "ant.design.css",
+        menu: '#000b16',
+        logo: '#002140',
+        top: '#FFF'
+    }, {
+        text: "Admin LTE",
+        file: "admin.lte.css",
+        top: '#3c8dbc',
+        logo: '#3c8dbc',
+        menu: '#2b3539'
+    }, {
+        text: "Highdmin",
+        file: "highdmin.css",
+        top: '#02c0ce',
+        menu: '#e0e0e0',
+        logo: '#02c0ce'
+    }, {
+        text: "Aircraft",
+        file: "aircraft.css",
+        top: '-webkit-gradient(linear, left bottom, left top, color-stop(0, #4d5b76), color-stop(1, #6f80a1)) !important',
+        menu: '#e0e0e0',
+        logo: '-webkit-gradient(linear, left bottom, left top, color-stop(0, #4d5b76), color-stop(1, #6f80a1)) !important'
+    }, {
+        text: "Purple",
+        file: "purple.css",
+        top: '#FFF',
+        logo: '#FFF',
+        menu: '#3e4295'
+    }, {
+        text: "Gray",
+        file: "gray.css",
+        top: '#213a53',
+        logo: '#213a53',
+        menu: '#e0e0e0'
+    },
+    {
+        text: "Dark green",
+        file: "dark.green.css",
+        top: '#f3f3f4',
+        menu: '#283846',
+        logo: '#283846'
+    },
+    {
+        text: "Orange",
+        file: "orange.css",
+        top: 'linear-gradient(to right bottom, #da8342, #e45131)',
+        logo: 'linear-gradient(to right bottom, #da8342, #e45131)',
+        menu: '#FFF'
+    },
+    {
+        text: "Black",
+        file: "black.css",
+        top: "#333",
+        logo: "#333",
+        menu: '#FFF'
+    },
+    {
+        text: "Green",
+        file: "green.css",
+        top: '#19a97b',
+        logo: '#FFF',
+        menu: '#FFF'
+    },
+    {
+        text: "Light",
+        file: "light.css",
+        top: "#ebf1f5",
+        logo: "#ebf1f5",
+        menu: "#ebf1f5"
+    }, {
+        text: 'Enterprise blue',
+        file: 'e-blue.css',
+        top: '#3ba1df',
+        logo: '#3ba1df',
+        menu: '#FFF'
+    }, {
+        text: 'Enterprise blue pro',
+        file: 'e-blue-pro.css',
+        top: '#3ba1df',
+        logo: '#3ba1df',
+        menu: 'rgb(38, 50, 56)'
+    }, {
+        text: 'Enterprise green',
+        file: 'e-green.css',
+        top: '#27ad60',
+        logo: '#27ad60',
+        menu: '#FFF'
+    }, {
+        text: 'Enterprise green pro',
+        file: 'e-green-pro.css',
+        top: '#27ad60',
+        logo: '#27ad60',
+        menu: 'rgb(38, 50, 56)'
+    }, {
+        text: 'Enterprise red',
+        file: 'e-red.css',
+        top: '#c9333e',
+        logo: '#c9333e',
+        menu: '#FFF'
+    }, {
+        text: 'Enterprise red pro',
+        file: 'e-red-pro.css',
+        top: '#c9333e',
+        logo: '#c9333e',
+        menu: 'rgb(38, 50, 56)'
+    }, {
+        text: 'Enterprise purple',
+        file: 'e-purple.css',
+        top: '#8263b1',
+        logo: '#8263b1',
+        menu: '#FFF'
+    }, {
+        text: 'Enterprise purple pro',
+        file: 'e-purple-pro.css',
+        top: '#8263b1',
+        logo: '#8263b1',
+        menu: 'rgb(38, 50, 56)'
+    }, {
+        text: 'Enterprise black',
+        file: 'e-black.css',
+        top: '#1f2c39',
+        logo: '#1f2c39',
+        menu: '#FFF'
+    }, {
+        text: 'Enterprise black pro',
+        file: 'e-black-pro.css',
+        top: '#1f2c39',
+        logo: '#1f2c39',
+        menu: 'rgb(38, 50, 56)'
+    }, {
+        text: 'x-green',
+        file: 'x-green.css',
+        top: '#2F9688',
+        logo: '#2F9688',
+        menu: 'rgb(38, 50, 56)'
+    }, {
+        text: 'x-red',
+        file: 'x-red.css',
+        top: '#AA3130',
+        logo: 'rgb(38, 50, 56)',
+        menu: 'rgb(38, 50, 56)'
+    }, {
+        text: 'x-blue',
+        file: 'x-blue.css',
+        top: '#FFF',
+        logo: '#1E9FFF',
+        menu: 'rgb(38, 50, 56)'
+    }
+]
+```
 
 ## 自定义主题
 在自定义主题之前，请先把simpleui的静态资源克隆到根目录。然后找到theme
@@ -250,6 +446,12 @@ SIMPLEUI_INDEX = 'https://www.88cto.com'
 默认可以不用填写，缺省配置为默认排序，不对菜单进行过滤和排序。<br>
 开启认为传一个列表，如果列表为空，则什么也不显示。列表中的每个元素要对应到menus里面的name字段
 
+#### dynamic 开启动态菜单功能
+该字段用于告诉simpleui，是否需要开启动态菜单功能。<br>
+默认可以不用填写，缺省配置为False，不开启动态菜单功能。<br>
+开启为True，开启后，每次用户登陆都会刷新左侧菜单配置。<br>
+需要注意的是：开启后每次访问admin都会重读配置文件，所以会带来额外的消耗。
+
 #### menus说明
 
 |字段|说明|
@@ -261,9 +463,11 @@ SIMPLEUI_INDEX = 'https://www.88cto.com'
 
 #### 例子
 ```python
+import time
 SIMPLEUI_CONFIG = {
-    'system_keep':False,
-    'menu_display': ['Simpleui', '测试', '权限认证'],      # 开启排序和过滤功能, 不填此字段为默认排序和全部显示, 空列表[] 为全部不显示.
+    'system_keep': False,
+    'menu_display': ['Simpleui', '测试', '权限认证', '动态菜单测试'],      # 开启排序和过滤功能, 不填此字段为默认排序和全部显示, 空列表[] 为全部不显示.
+    'dynamic': True,    # 设置是否开启动态菜单, 默认为False. 如果开启, 则会在每次用户登陆时动态展示菜单内容
     'menus': [{
         'name': 'Simpleui',
         'icon': 'fas fa-code',
@@ -288,6 +492,14 @@ SIMPLEUI_CONFIG = {
             'name': '内网穿透',
             'url': 'https://www.wezoz.com',
             'icon': 'fab fa-github'
+        }]
+    }, {
+        'name': '动态菜单测试' ,
+        'icon': 'fa fa-desktop',
+        'models': [{
+            'name': time.time(),
+            'url': 'http://baidu.com',
+            'icon': 'far fa-surprise'
         }]
     }]
 }
@@ -446,6 +658,59 @@ class EmployeAdmin(admin.ModelAdmin):
 |icon|按钮图标，参考https://element.eleme.cn/#/zh-CN/component/icon与https://fontawesome.com，把class 复制进来即可|
 |type|按钮类型，参考：https://element.eleme.cn/#/zh-CN/component/button|
 |style|自定义css样式|
+|confirm|弹出确认框，在3.4或以上版本中生效|
+
++ confirm 例子
+
+```python
+    def message_test(self, request, queryset):
+        messages.add_message(request, messages.SUCCESS, '操作成功123123123123')
+        
+    # 给按钮增加确认
+    message_test.confirm = '你是否执意要点击这个按钮？'
+```
+
+
+
++ 链接按钮
+
+> 在2.9或以上版本中生效
+
+|字段|说明|
+|------|------|
+|action_type|按钮动作类型，0=当前页内打开，1=新tab打开，2=浏览器tab打开|
+|action_url|按钮访问链接|
+
+demo：
+```python
+  # 增加自定义按钮
+    actions = ['custom_button']
+
+    def custom_button(self, request, queryset):
+        pass
+
+    # 显示的文本，与django admin一致
+    custom_button.short_description = '测试按钮'
+    # icon，参考element-ui icon与https://fontawesome.com
+    custom_button.icon = 'fas fa-audio-description'
+
+    # 指定element-ui的按钮类型，参考https://element.eleme.cn/#/zh-CN/component/button
+    custom_button.type = 'danger'
+
+    # 给按钮追加自定义的颜色
+    custom_button.style = 'color:black;'
+
+    # 链接按钮，设置之后直接访问该链接
+    # 3中打开方式
+    # action_type 0=当前页内打开，1=新tab打开，2=浏览器tab打开
+    # 设置了action_type，不设置url，页面内将报错
+    # 设置成链接类型的按钮后，custom_button方法将不会执行。
+
+    custom_button.action_type = 0
+    custom_button.action_url = 'http://www.baidu.com'
+
+```
+
 
 ## 离线模式
 > 在2.1.3或以上的版本中生效
@@ -456,6 +721,17 @@ SIMPLEUI_STATIC_OFFLINE = True
 指定simpleui 是否以脱机模式加载静态资源，为True的时候将默认从本地读取所有资源，即使没有联网一样可以。适合内网项目
 
  不填该项或者为False的时候，默认从第三方的cdn获取
+## 关闭Loading遮罩层
+> 在2.1.5或以上的版本中生效
+
+在settings.py中加入
+```python
+SIMPLEUI_LOADING = False
+```
+True或None 默认显示加载遮罩层，指定为False 不显示遮罩层。默认显示
+
+## admindoc
+admindoc需要simpleui 3.3+ 版本
 
 ## 常见问题
   ### settings.py 找不到
